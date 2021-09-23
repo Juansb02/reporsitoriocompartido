@@ -35,14 +35,14 @@
 }
 
 .estilo-icono {
-    font-size: 64px;
+    font-size:64px;
     border-style: outset;
     background-color: gold;
 }
 
 .div-icono {
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 50px;
 }
 
 .div-galeria {
