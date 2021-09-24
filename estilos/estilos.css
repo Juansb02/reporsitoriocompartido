@@ -52,9 +52,9 @@
 .tarjeta-total {
     z-index: 1;
     position: fixed;
-    top: 0;
-    right: 0;
-    background: white;
+    top: 100px;
+    right: 10px;
+    background:transparent;
     border: solid;
     border-radius: 10px;
     margin-right: 5px;
