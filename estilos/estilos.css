@@ -52,7 +52,7 @@
 .tarjeta-total {
     z-index: 1;
     position: fixed;
-    top: 100px;
+    top: 250px;
     right: 10px;
     background:transparent;
     border: solid;
@@ -83,4 +83,47 @@
         text-align: justify;
         font-size: 25px;
     }
+    h3.nombre-receta {
+        text-align: center;
+        color: #08546d;
+        
+    }
+
  }
+
+.tarjeta-recetas {
+    z-index: 1;
+    position: center;
+    top: 50px;
+    right: 10px;
+    background:transparent;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+    align-items: center;
+}
+.div-galeriareceta {
+    padding-top: 30px;
+    
+}
+
+
+.imagen-receta {
+    max-width: 400px;
+    max-height: 100%;
+    border-radius: 30px;
+    padding-right: 10px;
+    display:block;
+    margin:auto;
+    
+}
+.fila-recetas {
+    display: flex !important;
+    background:transparent;
+    border: solid;
+    border-radius: 10px;
+}
+.descripcion-receta {
+    max-width: max-content;
+    text-align: justify;
+}
