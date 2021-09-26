@@ -127,3 +127,23 @@
     max-width: max-content;
     text-align: justify;
 }
+
+.imagen-menu {
+    max-width: 400px;
+    max-height: 100%;
+    border-radius: 30px;
+    padding-right: 10px;
+    
+}
+
+.tarjeta-menu {
+    z-index: 1;
+    position:static;
+    top: 50px;
+    right: 10px;
+    background:transparent;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+    align-items:initial;
+}
