@@ -106,3 +106,22 @@ table {
     text-align: center !important;
 
 }
+
+.navbar-light {
+    --bs-bg-opacity: 0;
+    background-color:white;
+}
+.navbar-light.bg-light {
+    --bs-bg-opacity: 0;
+    background-color:white;
+}
+.container-fluid{
+    --bs-bg-opacity: 0;
+    background-color:white;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #B9B9B9;
+    border-color: #000000;
+}

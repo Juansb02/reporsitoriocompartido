@@ -147,3 +147,8 @@
     margin-top: 5px;
     align-items:initial;
 }
+.nombre-categoria {
+    text-align: right;
+    color: #000000;
+    
+}

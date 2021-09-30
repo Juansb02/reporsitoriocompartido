@@ -1,5 +1,4 @@
-<html>
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +14,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">  
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </head>
 <body>
    <br>
@@ -23,7 +22,8 @@
     
 <h3 align="center" class ="eslogan">"Motiva tu cuerpo, tu mente y sentirás el cambio"</h3>
 
-    <h1>Categorias</h1>
+    <h2>Categorias</h2>
+
     <table id="navBar">
         <tr>
         <th><a href="index.html">Inicio</a></th>                
@@ -43,17 +43,24 @@
         <th><a href="carrito.html">Carrito de Compras</a></th>
         </tr>
     </table>
+
      <div class="container div-galeria" id="galeria">
         <div class="row fila-productos">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tarjeta-menu">
-               <img class="imagen-menu" src="imagenes\suplementosMenu.jpg">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tarjeta-menu"></div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tarjeta-menu">
-                <img class="imagen-menu" src="imagenes\cuidadoPersonalMenu.jpg">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tarjeta-menu">
+                    <a href="suplementos.html"><img href="suplementos.html" class="imagen-menu" src="imagenes\suplementosMenu.jpg"></a>
+                 <h4 align="center" class ="nombre-categoria">Suplementos</h4>
+                </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tarjeta-menu">
+            
             </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tarjeta-menu">
+                <a href="CuidadoPersonal.html"><img class="imagen-menu" src="imagenes\cuidadoPersonalMenu.jpg"></a>
+                <h4 align="center" class ="nombre-categoria">Cuidado Personal</h4>
+            </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        </div>
 
         <div class="container div-galeria" id="galeria">
         <div class="row fila-productos">
@@ -62,15 +69,19 @@
         <div class="row fila-productos">
          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tarjeta-menu">
-               <img class="imagen-menu" src="imagenes\lieaVeganaMenu.jpg">
+               <a href="lineavegana.html"><img class="imagen-menu" src="imagenes\lieaVeganaMenu.jpg"></a>
+                <h4 align="center" class ="nombre-categoria">Línea Vegana</h4>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tarjeta-menu"></div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tarjeta-menu">
-                <img class="imagen-menu" src="imagenes\alimentosMenu.jpg">
+                <a href="Alimentos.html"><img class="imagen-menu" src="imagenes\alimentosMenu.jpg"></a>
+                <h4 align="center" class ="nombre-categoria">Alimentos</h4>            
             </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
         </div>
     </div>
     </div>
+
+
 </body>
 </html>
