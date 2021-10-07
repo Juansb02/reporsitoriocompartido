@@ -3,10 +3,10 @@
         <div class="container div-galeria" id="galeria">
             <div class="row fila-cuidadosPersonales">
                 <div v-for="cuidadoPersonal in cuidadosPersonales" :key="cuidadoPersonal.id" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tarjeta-producto">
-                    <img class="imagen-cuidadoPersonal" :src="getPictureProducto(cuidadoPersonal.imagen)">
-                    <h1 class="nombre-cuidadoPersonal">{{cuidadoPersonal.nombre}}</h1>
-                    <h3 class="precio-cuidadoPersonal">${{cuidadoPersonal.precio}}</h3>
-                    <div class="descripcion-cuidadoPersonal">
+                    <img class="imagen-producto" :src="getPictureProducto(cuidadoPersonal.imagen)">
+                    <h1 class="nombre-producto">{{cuidadoPersonal.nombre}}</h1>
+                    <h3 class="precio-producto">${{cuidadoPersonal.precio}}</h3>
+                    <div class="descripcion-producto">
                         <p>{{cuidadoPersonal.descripcion}}</p>
                     </div>
                     <div id="icono" class="div-icono">
@@ -60,7 +60,7 @@ export default {
             this.carrito.push(cuidadoPersonal)
             console.log(this.carrito)
             this.total_carrito = this.total_carrito + cuidadoPersonal.precio
-            Swal.fire(
+            this.$swal.fire(
                 'Producto agregado',
                 'Se ha agregado ' + cuidadoPersonal.nombre + ' al carrito de compras',
                 'success'

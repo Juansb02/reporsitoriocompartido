@@ -2,10 +2,10 @@
         <div class="container div-galeria" id="galeria">
             <div class="row fila-alimentos">
                 <div v-for="alimento in alimentos" :key="alimento.id" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tarjeta-producto">
-                    <img class="imagen-alimento" :src="getPictureProducto(alimento.imagen)">
-                    <h1 class="nombre-alimento">{{alimento.nombre}}</h1>
-                    <h3 class="precio-alimento">${{alimento.precio}}</h3>
-                    <div class="descripcion-alimento">
+                    <img class="imagen-producto" :src="getPictureProducto(alimento.imagen)">
+                    <h1 class="nombre-producto">{{alimento.nombre}}</h1>
+                    <h3 class="precio-producto">${{alimento.precio}}</h3>
+                    <div class="descripcion-producto">
                         <p>{{alimento.descripcion}}</p>
                     </div>
                     <div id="icono" class="div-icono">
@@ -58,7 +58,7 @@ export default {
             this.carrito.push(alimento)
             console.log(this.carrito)
             this.total_carrito = this.total_carrito + alimento.precio
-            Swal.fire(
+            this.$swal.fire(
                 'Producto agregado',
                 'Se ha agregado ' + alimento.nombre + ' al carrito de compras',
                 'success'
