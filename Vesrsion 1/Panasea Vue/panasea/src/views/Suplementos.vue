@@ -3,10 +3,10 @@
         <div class="container div-galeria" id="galeria">
             <div class="row fila-suplementos">
                 <div v-for="suplemento in suplementos" :key="suplemento.id" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tarjeta-producto">
-                    <img class="imagen-suplemento" :src="getPictureProducto(suplemento.imagen)">
-                    <h1 class="nombre-suplemento">{{suplemento.nombre}}</h1>
-                    <h3 class="precio-suplemento">${{suplemento.precio}}</h3>
-                    <div class="descripcion-suplemento">
+                    <img class="imagen-producto" :src="getPictureSuplemento(suplemento.imagen)">
+                    <h1 class="nombre-producto">{{suplemento.nombre}}</h1>
+                    <h3 class="precio-producto">${{suplemento.precio}}</h3>
+                    <div class="descripcion-producto">
                         <p>{{suplemento.descripcion}}</p>
                     </div>
                     <div id="icono" class="div-icono">
@@ -51,7 +51,7 @@ export default {
         ]
     },
     methods: {
-        getPictureProducto (nombre_archivo) {
+        getPictureSuplemento (nombre_archivo) {
             /* Función para cargar imágenes dinámicamente */
             var images = require.context('@/assets/productos/', false, /\.jpg$|\.png$/)
             return images('./' + nombre_archivo)
@@ -60,7 +60,7 @@ export default {
             this.carrito.push(suplemento)
             console.log(this.carrito)
             this.total_carrito = this.total_carrito + suplemento.precio
-            Swal.fire(
+            this.$swal.fire(
                 'Producto agregado',
                 'Se ha agregado ' + suplemento.nombre + ' al carrito de compras',
                 'success'
