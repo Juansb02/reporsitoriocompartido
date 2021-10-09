@@ -1,12 +1,12 @@
 <template>
-    <div id="contenido">
+<div id="contenido">
         <div class="container div-galeria" id="galeria">
             <div class="row fila-alimentos">
                 <div v-for="alimento in alimentos" :key="alimento.id" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tarjeta-producto">
-                    <img class="imagen-alimento" :src="getPictureProducto(alimento.imagen)">
-                    <h1 class="nombre-alimento">{{alimento.nombre}}</h1>
-                    <h3 class="precio-alimento">${{alimento.precio}}</h3>
-                    <div class="descripcion-alimento">
+                    <img class="imagen-producto" :src="getPictureProducto(alimento.imagen)">
+                    <h1 class="nombre-producto">{{alimento.nombre}}</h1>
+                    <h3 class="precio-producto">${{alimento.precio}}</h3>
+                    <div class="descripcion-producto">
                         <p>{{alimento.descripcion}}</p>
                     </div>
                     <div id="icono" class="div-icono">
@@ -23,6 +23,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
@@ -32,7 +33,8 @@ export default {
         }
     },
     created () {
-        this.alimentos = [
+        this.cargaralimentos()
+        /* this.alimentos = [
             {
                 id: 1,
                 nombre: 'Cocozhi',
@@ -48,8 +50,9 @@ export default {
                 descripcion: 'DXN Morinzyme es una bebida botánica fermentada de Noni que producida a partir del proceso de fermentación de concentrado de Noni. La fermentación puede ayudar a preservar los nutrientes en la bebida y también produce muchas enzimas.'
             }
             
-        ]
-    },
+        ] */
+    
+    }, 
     methods: {
         getPictureProducto (nombre_archivo) {
             /* Función para cargar imágenes dinámicamente */
@@ -60,11 +63,19 @@ export default {
             this.carrito.push(alimento)
             console.log(this.carrito)
             this.total_carrito = this.total_carrito + alimento.precio
-            Swal.fire(
+            this.$swal.fire(
                 'Producto agregado',
                 'Se ha agregado ' + alimento.nombre + ' al carrito de compras',
                 'success'
             )
+        },
+        cargaralimentos () {
+        axios.get('http://localhost:3000/Api/alimentos')
+        .then(response => {
+            let status_peticion = response.status
+            console.log(status_peticion)
+            this.alimentos = response.data
+        })
         }
     }
 }

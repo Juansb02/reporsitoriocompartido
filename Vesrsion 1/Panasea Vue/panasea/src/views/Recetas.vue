@@ -1,0 +1,113 @@
+<template>
+    <div id="contenido">
+        <div class="container">
+        <div class="container div-galeria" id="galeria">
+        <div class="row fila-recetas">
+            <div class="tarjeta-recetas">
+            <br>
+                <center><img class="imagen-receta" v-bind:src="require('@/assets/productos/receta4.png')"></center>
+                <br>
+                <h3 align="center" class ="nombre-receta">GELATINA DE COCOZHI</h3>
+                <div class="descripcion-receta">
+                    <p><b>NECESITAMOS</b></p>   
+                    <p>🍫3 sobres de cocozhi.
+                    🍶1 lata de leche evaporada.
+                    🍶1 lata de leche condensada.
+                    🥄3 cucharadas de grenetina
+                    💧3 tazas de agua</p>
+                    <p><b>ELABORACIÓN:</b></p>
+                    <p>✔️ Mezclar en una taza de agua fría las 3 cucharadas de grenetina, mover la durante 2 minutos y reposarla 5 minutos. 
+                    ✔️ Posteriormente hervir las 2 tazas de agua restantes, agregar el cocozhi, la lata de leche condensada, la lata de la leche evaporada y la grenetina, mezclar perfectamente bien hasta no tener grumos. 
+                    ✔️ Enfriar y meter al refrigerador hasta que cuaje.
+                    ✔️También puedes mezclar las y hacer gelatinas de 2 o 3 sabores... Esto y más puedes hacer con nuestros productos saludables de DXN.</p>
+                </div>
+            </div>
+        </div>
+            
+    <br>
+    
+        <div class="row fila-recetas">
+            <div class="tarjeta-recetas">
+            <br>
+                <center><img class="imagen-receta" v-bind:src="require('@/assets/productos/receta1.png')"></center>
+                <br>
+                <h3 align="center" class ="nombre-receta">FALAFEL DE BRÓCOLI AL HORNO Y SALUDABLE</h3>
+                
+                <div class="descripcion-receta">
+                    <p><b>NECESITAMOS</b></p>  
+                    <p>🌱300g de brócoli 
+                    🌱1 bote de garbanzos cocidos  
+                    🌱1 cebolla 
+                    🌱 2 dientes de ajo 
+                    🌱 1 taza de copos de avena triturados o harina de avena  
+                    🌱2 cdas de zumo de limón 
+                    🌱1 puñado de perejil fresco  
+                    🌱1 cdta de comino 
+                    🌱 1/3 cdta de pimienta negra 
+                    🌱Sal.</p>
+                    <p><b>ELABORACIÓN:</b></p>
+                    <p>✔️ Ralla el brócoli, las hojas y los tallos pequeños. 
+                    ✔️ Machaca los garbanzos con un tenedor (no triturar con el procesador o la batidora porque quedará poco consistente y no se podrán formar las bolas) 
+                    ✔️Tritura la cebolla, los ajos y el perejil en el procesador (sin llegar a batir, que queden trozos muy pequeñitos). 
+                    ✔️ Mezcla todos los ingredientes en un bol, forma bolas aplastadas o redondas, como más te gusten y ponlas en la bandeja del horno con papel vegetal. 
+                    ✔️ Hornea 30 min a 200° con el horno precalentado (tb se puede freír para lo que recomiendo rebozar en harina de garbanzo). 
+                    ✔️ Y a disfrutar, quedan tremendamente ricos!</p>
+                </div>
+            </div>
+        </div>
+<br>
+        <div  class="row fila-recetas">
+            <div class="tarjeta-recetas">
+            <br>
+                <center><img class="imagen-receta" v-bind:src="require('@/assets/productos/receta2.png')"></center>
+                <br>
+                <h3 align="center" class ="nombre-receta">BROCHETAS DE VEGETALES🍢</h3>
+                
+                <div class="descripcion-receta">
+                    <p><b>NECESITAMOS</b></p>  
+                    <p>🌱Berenjena 1 unidad 
+                    🌱Tomates  
+                    🌱Calabacín 1 unidad 
+                    🌱Aceite de oliva al gusto 
+                    🌱Pimienta negra al gusto  
+                    🌱Sal a gusto.</p>
+                    <p><b>ELABORACIÓN:</b></p>
+                    <p>✔️ Lavar y secar la berenjena.  Cortar en cubos y colocar en una olla, agregar 1 cucharada de sal, cubrir con agua y mezclar bien.  Remoja la berenjena mientras preparas los demás ingredientes. 
+                    ✔️ Lave y seque el calabacín.  Cortar en cubos.  Lava y seca los tomates. 
+                    ✔️ Escurre los cubos de berenjena y sécalos bien con un paño de cocina limpio. 
+                    ✔️ Montar las brochetas colocando un cubo de calabacín, luego uno de berenjena, ensartar un tomate entero y terminar con otro cubo de berenjena y otro cubo de calabacín.  Repita con las otras brochetas hasta que se acaben los ingredientes. 
+                    ✔️ Coloque una parrilla a fuego medio para calentar.  Proteger los extremos de las brochetas con papel de aluminio para que no se quemen y untar las verduras con aceite de oliva. 
+                    ✔️ Coloque las brochetas en la parrilla durante unos 4 minutos por cada lado o hasta que las verduras estén cocidas y doradas.  Servir luego con salsa chimichurri.</p>
+                </div>
+            </div>
+        </div>
+
+    <br>
+        <div  class="row fila-recetas"> 
+            <div class="tarjeta-recetas">
+            <br>
+                <center><img class="imagen-receta" v-bind:src="require('@/assets/productos/receta3.png')"></center>
+                <br>
+                <h3 align="center" class ="nombre-receta">TARTA VEGANA</h3>
+                
+                <div class="descripcion-receta">
+                    <p><b>NECESITAMOS</b></p>   
+                    <p>🥄2 cucharadas de avena.
+                    🍫1 cucharada de COCOZHI en polvo 100%.
+                    🍚2 cucharadas de azúcar demerara.
+                    🥣1 cucharada de levadura en polvo.
+                    🍶6 cucharadas de agua.
+                    🥥1 cucharada de aceite de coco.</p>
+                    <p><b>ELABORACIÓN:</b></p>
+                    <p>✔️ Mezcle todos los sólidos en una taza de porcelana de 300 ml para microondas.  Luego agrega agua y aceite de coco líquido poco a poco y mezcla hasta formar una masa homogénea. 
+                    ✔️ Coloque en el microondas durante 1 a 2 minutos.  Si utiliza un horno convencional, coloque la taza en un molde con agua en el horno precalentado y hornee al baño María durante 20 minutos. 
+                    ✔️ Si no tienes cacao en polvo 100%, usa otro chocolate que no contenga leche y reduce una cucharada de azúcar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<br>
+<br>
+</div>
+</template>

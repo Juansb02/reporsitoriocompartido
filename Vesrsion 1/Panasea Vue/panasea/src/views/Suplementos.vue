@@ -3,14 +3,14 @@
         <div class="container div-galeria" id="galeria">
             <div class="row fila-suplementos">
                 <div v-for="suplemento in suplementos" :key="suplemento.id" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tarjeta-producto">
-                    <img class="imagen-suplemento" :src="getPictureProducto(suplementos.imagen)">
-                    <h1 class="nombre-suplementos">{{suplementos.nombre}}</h1>
-                    <h3 class="precio-suplementos">${{suplementos.precio}}</h3>
-                    <div class="descripcion-suplementos">
-                        <p>{{suplementos.descripcion}}</p>
+                    <img class="imagen-producto" :src="getPictureSuplemento(suplemento.imagen)">
+                    <h1 class="nombre-producto">{{suplemento.nombre}}</h1>
+                    <h3 class="precio-producto">${{suplemento.precio}}</h3>
+                    <div class="descripcion-producto">
+                        <p>{{suplemento.descripcion}}</p>
                     </div>
                     <div id="icono" class="div-icono">
-                        <i class="las la-cart-arrow-down estilo-icono" @click="agregarAlCarrito(suplementos)"></i>
+                        <i class="las la-cart-arrow-down estilo-icono" @click="agregarAlCarrito(suplemento)"></i>
                         <p><b>Agregar al carrito</b></p>
                     </div>
                 </div>
@@ -23,6 +23,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
@@ -32,7 +33,8 @@ export default {
         }
     },
     created () {
-        this.suplementos = [
+        this. cargarsuplementos()
+        /* this.suplementos =  [
             {
                 id: 1,
                 nombre: 'Reishi Gano',
@@ -48,10 +50,10 @@ export default {
                 descripcion: 'Cosecha de un micelio de 14 días de Ganoderma lucidum, producido en una fábrica certificada de Buenas Prácticas de Manufactura (GMP), como RG, Ganocelium también está disponible en forma de cápsula y polvo.</p><p>Ingrediente:</p><p>Micelio de Ganoderma lucidum.'
             }
             
-        ]
-    },
+        ] */ 
+    }, 
     methods: {
-        getPictureProducto (nombre_archivo) {
+        getPictureSuplemento (nombre_archivo) {
             /* Función para cargar imágenes dinámicamente */
             var images = require.context('@/assets/productos/', false, /\.jpg$|\.png$/)
             return images('./' + nombre_archivo)
@@ -60,11 +62,19 @@ export default {
             this.carrito.push(suplemento)
             console.log(this.carrito)
             this.total_carrito = this.total_carrito + suplemento.precio
-            Swal.fire(
+            this.$swal.fire(
                 'Producto agregado',
                 'Se ha agregado ' + suplemento.nombre + ' al carrito de compras',
                 'success'
             )
+        },
+        cargarsuplementos () {
+        axios.get('http://localhost:3000/Api/suplementos')
+        .then(response => {
+            let status_peticion = response.status
+            console.log(status_peticion)
+            this.suplementos = response.data
+        })
         }
     }
 }
