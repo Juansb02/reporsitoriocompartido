@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "63100cdb-b38c-4df4-acdf-c5610e025dee",
+		"name": "Panasea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Proyecto Panacea",
+			"item": [
+				{
+					"name": "Prueba",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarAlimentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Api/alimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Api",
+								"alimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarSuplementos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Api/suplementos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Api",
+								"suplementos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarLineaVegana",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Api/lveganas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Api",
+								"lveganas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarCuidadosPersonales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Api/cpersonales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Api",
+								"cpersonales"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
