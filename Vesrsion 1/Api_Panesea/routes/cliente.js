@@ -2,49 +2,49 @@ import express from 'express';
 const router = express.Router();
 
 // Importar modelo
-import clientes from '../models/clientes';
+import cliente from '../models/cliente';
 
 // Ruta para crear cliente
-router.post('/cliente', async(req, res) => {
+router.post('/nuevo-cliente', async(req, res) => {
     const body = req.body.data;
     // console.log(body);
     try {
-        const clientesDB = await clientes.create(body);
-        res.status(200).json(clientesDB);
+        const clienteDB = await cliente.create(body);
+        res.status(200).json(clienteDB);
     } catch (error) {
         return res.status(400).json({
-            mensaje: 'Sucedió un error al crear el clientes',
+            mensaje: 'Sucedió un error al crear el cliente',
             error
         })
     }
 });
-
+/* 
 // Ruta para buscar cliente
-router.get('/clientes/:identificacion', async(req, res) => {
+router.get('/cliente/:identificacion', async(req, res) => {
     const identificacion = req.params.identificacion;
     try {
         console.log(identificacion)
-        const clientesDB = await clientes.findOne({identificacion});
-        res.json(clientesDB);
+        const clienteDB = await Cliente.findOne({identificacion});
+        res.json(clienteDB);
     } catch (error) {
         return res.status(400).json({
-            mensaje: 'Ocurrió un error al buscar clientes',
+            mensaje: 'Ocurrió un error al buscar cliente',
             error
         })
     }
 });
 
 // Ruta para actualizar cliente
-router.put('/actualizar-clientes/:id', async(req, res) => {
+router.put('/actualizar-cliente/:id', async(req, res) => {
     const _id = req.params.id
     const body = req.body;
     try {
-        const clientesDB = await clientes.findByIdAndUpdate(
+        const clienteDB = await Cliente.findByIdAndUpdate(
             _id,
             body,
             {new: true}
         );
-        res.json(clientesDB);
+        res.json(clienteDB);
     } catch (error) {
         return res.status(400).json({
             mensaje: 'Ocurrió un error al actualizar el cliente',
@@ -54,17 +54,17 @@ router.put('/actualizar-clientes/:id', async(req, res) => {
 });
 
 // Ruta para eliminar cliente
-router.delete('/eliminar-clientes/:id', async(req, res) => {
+router.delete('/eliminar-cliente/:id', async(req, res) => {
     const _id = req.params.id;
     try {
-        const clientesDB = await clientes.findByIdAndDelete({_id});
-        if(!clientesDB){
+        const clienteDB = await Cliente.findByIdAndDelete({_id});
+        if(!clienteDB){
             return res.status(400).json({
                 mensaje: 'No se encontró el cliente',
                 error
             })
         }
-        res.json(clientesDB);
+        res.json(clienteDB);
     } catch (error) {
         return res.status(400).json({
             mensaje: 'Ocurrió un error al eliminar el cliente',
@@ -72,8 +72,7 @@ router.delete('/eliminar-clientes/:id', async(req, res) => {
         })
     }
 });
-
+ */
 
 // Exportar configuración
 module.exports = router;
-

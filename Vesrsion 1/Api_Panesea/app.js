@@ -30,6 +30,7 @@ app.use('/api', require('./routes/alimentos'));
 app.use('/api', require('./routes/cpersonales'));
 app.use('/api', require('./routes/lveganas'));
 app.use('/api', require('./routes/suplementos'));
+app.use('/api', require('./routes/cliente'));
 
 // Middleware para Vue.js router modo history
 const history = require('connect-history-api-fallback');

@@ -36,5 +36,4 @@
     </table>
 </div>
 </div>
-    <br>
-</template>
+</template>s

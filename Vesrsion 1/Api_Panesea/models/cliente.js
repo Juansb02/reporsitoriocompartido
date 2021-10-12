@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-const clientesSchema = new Schema(
+const clienteSchema = new Schema(
     {
         identificacion: {type: String, required: [true, 'Identificación obligatoria']},
         nombres: {type: String, required: [true, 'Nombre obligatorio']},
@@ -15,6 +15,6 @@ const clientesSchema = new Schema(
 );
 
 // Convertir a modelo
-const clientes = mongoose.model('clientes', clientesSchema);
+const cliente = mongoose.model('cliente', clienteSchema);
 
-export default clientes;
+export default cliente;

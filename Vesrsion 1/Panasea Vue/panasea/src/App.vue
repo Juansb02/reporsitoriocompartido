@@ -1,6 +1,6 @@
 <template>
   <barra-menu/>
-  <router-view/>
+  <!-- <router-view/> -->
 </template>
 <script>
 import BarraMenu from '@/components/Menu.vue'
