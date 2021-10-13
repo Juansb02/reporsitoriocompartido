@@ -9,6 +9,7 @@ import Alimentos from "@/views/Alimentos.vue"
 import Clientes from "@/views/Clientes.vue"
 import Recetas from "@/views/Recetas.vue"
 import Carrito from "@/views/Carrito.vue"
+import EditarCliente from "@/views/EditarCliente.vue"
 import NotFound from "@/views/NotFound.vue"
 
 const routes = [
@@ -56,6 +57,11 @@ const routes = [
         path: "/carrito",
         name: "Carrito",
         component: Carrito
+    },
+    {
+      path: "/clientes/editar",
+      name: "EditarCliente",
+      component: EditarCliente
     },
     {
         path: "/:catchAll(.*)",
