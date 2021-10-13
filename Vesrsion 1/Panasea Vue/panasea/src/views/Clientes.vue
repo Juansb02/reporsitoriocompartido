@@ -51,6 +51,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
@@ -68,7 +69,31 @@ export default {
     },
     methods: {
         registrarCliente () {
-            console.log(this.cliente)
+           axios.post('http://localhost:3000/api/nuevo-cliente',
+           {
+               data: this.cliente
+           })
+           .then(response => {
+               console.log(response)
+               let status_peticion = response.status
+               console.log(status_peticion)
+               if (status_peticion === 200) {
+                    this.$swal.fire(
+                        'Cliente registrado',
+                        'Se ha resgistrado el cliente con identificación ' + this.cliente.identificacion,
+                        'success'
+                    )
+                    this.cliente = {}
+               } else {
+                    this.$swal.fire(
+                        'Cliente NO registrado',
+                        'Ocurrió un error al registrar el cliente con identificación ' + this.cliente.identificacion,
+                        'error'
+                    )
+               }
+               let mensaje = response.data
+               console.log(mensaje)
+           })
         }
     }
 }
