@@ -1,10 +1,6 @@
 <template>
     <div id="contenido">
         <div class="container">
-            <div>
-                <h1>Registro de clientes</h1>
-                <router-link :to="{name: 'EditarCliente'}">Editar Cliente</router-link>
-            </div>
             <h1>Actualización de clientes</h1>
         </div>
         <div class="container">
@@ -80,7 +76,7 @@ export default {
     },
     methods: {
         buscarCliente () {
-            axios.get(`http://localhost:3000/api/cliente/${this.cliente.identificacion}`)
+            axios.get(`https://panacea-online.herokuapp.com/api/cliente/${this.cliente.identificacion}`)
             .then(response => {
                 if (response.data !== null) {
                     this.cliente = response.data
@@ -94,7 +90,7 @@ export default {
             })
         },
         actualizarCliente () {
-            axios.put(`http://localhost:3000/api/actualizar-cliente/${this.cliente._id}, this.cliente`)
+            axios.put(`https://panacea-online.herokuapp.com/api/actualizar-cliente/${this.cliente._id}`, this.cliente)
             .then(response => {
                 let status_peticion = response.status
                 if (status_peticion === 200) {
@@ -124,7 +120,7 @@ export default {
                 confirmButtonText: 'Sí, eliminar'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        axios.delete(`http://localhost:3000/api/eliminar-cliente/${this.cliente._id}`)
+                        axios.delete(`https://panacea-online.herokuapp.com/api/eliminar-cliente/${this.cliente._id}`)
                             .then(response => {
                                 let status_peticion = response.status
                                 if (status_peticion === 200) {

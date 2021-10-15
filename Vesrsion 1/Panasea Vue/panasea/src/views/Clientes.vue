@@ -1,6 +1,10 @@
 <template>
     <div id="contenido">
         <div class="container">
+            <div>
+                <h1>Registro de clientes</h1>
+                <router-link :to="{name: 'EditarCliente'}">Editar Cliente</router-link>
+            </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <form>
@@ -69,10 +73,8 @@ export default {
     },
     methods: {
         registrarCliente () {
-           axios.post('http://localhost:3000/api/nuevo-cliente',
-           {
-               data: this.cliente
-           })
+           axios.post('https://panacea-online.herokuapp.com/api/nuevo-cliente',
+        this.cliente)
            .then(response => {
                console.log(response)
                let status_peticion = response.status
@@ -91,7 +93,7 @@ export default {
                         'error'
                     )
                }
-               let mensaje = response.data
+               let mensaje = response
                console.log(mensaje)
            })
         }

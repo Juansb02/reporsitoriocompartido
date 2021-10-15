@@ -13,7 +13,8 @@
             </div>
             </nav>
 
-
+            <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div id="header">
                 <table id="navBar">
                     <tr>
@@ -34,6 +35,8 @@
                     <th><a><router-link to="/carrito">Carrito de Compras</router-link></a></th>
                     </tr>
     </table>
+</div>
+</div>
 </div>
 </div>
     <br>

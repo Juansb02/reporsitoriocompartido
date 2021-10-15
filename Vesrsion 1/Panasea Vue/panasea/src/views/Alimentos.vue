@@ -1,4 +1,5 @@
 <template>
+<div id="contenido">
         <div class="container div-galeria" id="galeria">
             <div class="row fila-alimentos">
                 <div v-for="alimento in alimentos" :key="alimento.id" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tarjeta-producto">
@@ -19,8 +20,10 @@
             <h1>TOTAL</h1>
             <h2 id="total_carrito">${{total_carrito}}</h2>
         </div>
+    </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
@@ -30,7 +33,8 @@ export default {
         }
     },
     created () {
-        this.alimentos = [
+        this.cargaralimentos()
+        /* this.alimentos = [
             {
                 id: 1,
                 nombre: 'Cocozhi',
@@ -46,8 +50,9 @@ export default {
                 descripcion: 'DXN Morinzyme es una bebida botánica fermentada de Noni que producida a partir del proceso de fermentación de concentrado de Noni. La fermentación puede ayudar a preservar los nutrientes en la bebida y también produce muchas enzimas.'
             }
             
-        ]
-    },
+        ] */
+    
+    }, 
     methods: {
         getPictureProducto (nombre_archivo) {
             /* Función para cargar imágenes dinámicamente */
@@ -63,6 +68,14 @@ export default {
                 'Se ha agregado ' + alimento.nombre + ' al carrito de compras',
                 'success'
             )
+        },
+        cargaralimentos () {
+        axios.get('https://panacea-online.herokuapp.com/Api/alimentos')
+        .then(response => {
+            let status_peticion = response.status
+            console.log(status_peticion)
+            this.alimentos = response.data
+        })
         }
     }
 }

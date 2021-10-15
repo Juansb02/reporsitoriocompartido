@@ -23,6 +23,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
@@ -32,24 +33,25 @@ export default {
         }
     },
     created () {
-        this.suplementos = [
+        this. cargarsuplementos()
+        /* this.suplementos =  [
             {
                 id: 1,
                 nombre: 'Reishi Gano',
                 precio: 209100,
                 imagen: 'suplemento1.png',
-                descripcion: 'Reishi Gano (RG) está formulado a partir de Ganoderma lucidum, cultivado en una granja orgánica acreditada, se cosecha de un hongo rojo de 90 días, viene en forma de cápsula y polvo.</p><p> Ingrediente:</p> <p>100% Ganoderma lucidum.'
+                descripcion: 'Reishi Gano (RG) está formulado a partir de Ganoderma lucidum, cultivado en una granja orgánica acreditada, se cosecha de un hongo rojo de 90 días, viene en forma de cápsula y polvo. Ingredientes: Ganoderma lucidum.'
             },
             {
                 id: 2,
                 nombre: 'Ganocelium',
                 precio: 209100,
                 imagen: 'suplemento2.png',
-                descripcion: 'Cosecha de un micelio de 14 días de Ganoderma lucidum, producido en una fábrica certificada de Buenas Prácticas de Manufactura (GMP), como RG, Ganocelium también está disponible en forma de cápsula y polvo.</p><p>Ingrediente:</p><p>Micelio de Ganoderma lucidum.'
+                descripcion: 'Cosecha de un micelio de 14 días de Ganoderma lucidum, producido en una fábrica certificada de Buenas Prácticas de Manufactura (GMP), como RG, Ganocelium también está disponible en forma de cápsula y polvo. Ingrediente: Micelio de Ganoderma lucidum.'
             }
             
-        ]
-    },
+        ] */ 
+    }, 
     methods: {
         getPictureSuplemento (nombre_archivo) {
             /* Función para cargar imágenes dinámicamente */
@@ -65,6 +67,14 @@ export default {
                 'Se ha agregado ' + suplemento.nombre + ' al carrito de compras',
                 'success'
             )
+        },
+        cargarsuplementos () {
+        axios.get('https://panacea-online.herokuapp.com/Api/suplementos')
+        .then(response => {
+            let status_peticion = response.status
+            console.log(status_peticion)
+            this.suplementos = response.data
+        })
         }
     }
 }
