@@ -23,6 +23,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
@@ -32,7 +33,8 @@ export default {
         }
     },
     created () {
-        this.lineasVeganas = [
+        this.cargarlineasVeganas()
+    /*  this.lineasVeganas = [
             {
                 id: 1,
                 nombre: 'R3:1 Recovery',
@@ -49,7 +51,8 @@ export default {
             }
             
         ]
-    },
+        */
+    }, 
     methods: {
         getPictureProducto (nombre_archivo) {
             /* Función para cargar imágenes dinámicamente */
@@ -65,6 +68,14 @@ export default {
                 'Se ha agregado ' + lineaVegana.nombre + ' al carrito de compras',
                 'success'
             )
+        },
+        cargarlineasVeganas () {
+        axios.get('https://panacea-online.herokuapp.com/Api/lveganas')
+        .then(response => {
+            let status_peticion = response.status
+            console.log(status_peticion)
+            this.lineasVeganas = response.data
+        })
         }
     }
 }

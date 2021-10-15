@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Type-Keys-Filled";
+    src: url("fuentes/Type-Keys-Filled.ttf");
+  }
+  .tituloPrincipal { font-family: "Type-Keys-Filled", serif; font-size: 60px;}
+
+.eslogan {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    } 

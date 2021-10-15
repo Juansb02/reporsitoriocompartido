@@ -1,5 +1,5 @@
 <template>
-    <div id="contenido">
+<div id="contenido">
         <div class="container div-galeria" id="galeria">
             <div class="row fila-cuidadosPersonales">
                 <div v-for="cuidadoPersonal in cuidadosPersonales" :key="cuidadoPersonal.id" class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tarjeta-producto">
@@ -23,6 +23,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
@@ -32,7 +33,8 @@ export default {
         }
     },
     created () {
-        this.cuidadosPersonales = [
+        this.cargarcuidadosPersonales()
+        /* this.cuidadosPersonales = [
             {
                 id: 1,
                 nombre: 'Ganozhi Crema de Dientes',
@@ -49,7 +51,8 @@ export default {
             }
             
         ]
-    },
+        */
+    }, 
     methods: {
         getPictureProducto (nombre_archivo) {
             /* Función para cargar imágenes dinámicamente */
@@ -65,6 +68,14 @@ export default {
                 'Se ha agregado ' + cuidadoPersonal.nombre + ' al carrito de compras',
                 'success'
             )
+        },
+        cargarcuidadosPersonales () {
+        axios.get('https://panacea-online.herokuapp.com/Api/cpersonales')
+        .then(response => {
+            let status_peticion = response.status
+            console.log(status_peticion)
+            this.cuidadosPersonales = response.data
+        })
         }
     }
 }
